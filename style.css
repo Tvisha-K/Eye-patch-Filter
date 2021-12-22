@@ -1,0 +1,56 @@
+.heading{
+
+    font-size: 25px;
+
+    width: 50%;
+
+}
+
+i{
+
+    font-size: 45px;
+
+}
+
+
+.btn-success:hover{
+
+    background-color: red;
+
+}
+
+button{
+
+    border-radius: 40px !important;
+
+    width: 80px !important;
+
+    height: 80px !important;
+
+    padding: 10px !important;
+
+
+}
+
+canvas{
+
+    margin-top: 50px;
+
+    border-radius: 25px;
+
+    animation-name: border_change;
+
+    animation-duration: 4s;
+
+    animation-iteration-count: infinite;
+
+
+}
+
+@keyframes border_change{
+
+    from{box-shadow: 1px 1px 35px red;}
+
+    to{box-shadow: 1px 1px 35px yellow;}
+
+}

@@ -60,6 +60,6 @@ function draw(){
     image(video,0,0,300,300);
 
     
-    image(eye_patch,eye_x,eye_y-80,100,100);
+    image(eye_patch,eye_x-50,eye_y-50,100,100);
 
 }

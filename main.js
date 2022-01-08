@@ -22,11 +22,16 @@ function takepic(){
 
 }
 
+function preload(){
+
 eye_x = "";
 
 eye_y = "";
 
-eye_patch = "eye-patch.png"
+eye_patch = "eye-patch.png";
+
+}
+
 
 function draw(){
 
@@ -48,9 +53,9 @@ function get_poses(result){
 
         console.log(result);
 
-        eye_x = result[0].pose.eye_left.x;
+        eye_x = result[0].pose.leftEye.x;
 
-        eye_y = result[0].pose.eye_left.y;
+        eye_y = result[0].pose.leftEye.y;
 
     }
 

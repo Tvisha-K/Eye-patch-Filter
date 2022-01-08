@@ -1,55 +1,49 @@
-function setup(){
+function setup() {
 
-    canvas = createCanvas(300,300);
+    canvas = createCanvas(300, 300);
 
     canvas.center();
-    
+
     video = createCapture(VIDEO);
 
-    video.size(300,300);
-    
+    video.size(300, 300);
+
     video.hide();
 
-    posenet = ml5.poseNet(video,modelLoaded);
+    posenet = ml5.poseNet(video, modelLoaded);
 
-    posenet.on("pose" , get_poses);
+    posenet.on("pose", get_poses);
 
 }
 
-function takepic(){
+function takepic() {
 
     save("mypic.jpg");
 
 }
 
-function preload(){
+function preload() {
+
+    eye_patch = loadImage("eye-patch.png");
+
+}
+
 
 eye_x = "";
 
 eye_y = "";
 
-eye_patch = "eye-patch.png";
-
-}
 
 
-function draw(){
-
-    image(video,0,0,300,300);
-
-    image(eye_patch,eye_x,eye_y,100,200);
-
-}
-
-function modelLoaded(){
+function modelLoaded() {
 
     console.log("posenet loaded successfully");
 
 }
 
-function get_poses(result){
+function get_poses(result) {
 
-    if(result.length > 0){
+    if (result.length > 0) {
 
         console.log(result);
 
@@ -58,5 +52,14 @@ function get_poses(result){
         eye_y = result[0].pose.leftEye.y;
 
     }
+
+}
+
+function draw(){
+
+    image(video,0,0,300,300);
+
+    
+    image(eye_patch,eye_x,eye_y-80,100,100);
 
 }
